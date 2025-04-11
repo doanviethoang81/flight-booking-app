@@ -1,0 +1,250 @@
+/* Header ban đầu có nền ảnh, chữ trắng */
+.header {
+    /* position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0; */
+    /* background: url("../../assets/images/pexels-pixabay-355465.jpg") no-repeat center center; */
+    /* background-size: cover; */
+    /* transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out; */
+    /* z-index: 1000; */
+    color: white;
+    background: transparent; /* Màu nền có độ trong suốt */
+}
+
+/* Khi cuộn xuống thì đổi nền thành trắng, chữ thành đen */
+.header.scrolled {
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+/* Điều chỉnh màu chữ trong menu và các nút khi cuộn xuống */
+.header.scrolled .nav-links li,
+.header.scrolled .user-actions button,
+.header.scrolled .event-badge {
+    color: black;
+}
+
+/* Điều chỉnh màu icon */
+.header.scrolled img {
+    filter: none;
+}
+
+/* Phần trên chứa logo và header-right */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    padding-left: 210px;
+}
+
+.logo img {
+    height: 55px; /* Kích thước mặc định */
+    transition: height 0.3s ease-in-out;
+}
+
+.header.scrolled .logo img {
+    height: 40px; /* Khi cuộn xuống, logo nhỏ lại */
+}
+/* Phần bên phải */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-right: 200px;
+}
+
+/* Ngôn ngữ & tiền tệ */
+.language-currency {
+    padding: 8px 12px;
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Khi cuộn xuống, đổi màu chữ */
+.header.scrolled .language-currency {
+    color: black;
+}
+
+.language-currency img {
+    width: 20px;
+    height: 12px;
+}
+
+.language-currency:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Nền trắng mờ */
+}
+.header.scrolled .user-actions .language-currency:hover{
+    background-color: rgba(0, 0, 0, 0.1); /* Nền đen mờ */
+}
+/* Badge sự kiện */
+.event-badge {
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.event-badge:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Nền trắng mờ */
+}
+.header.scrolled .user-actions .event-badge:hover{
+    background-color: rgba(0, 0, 0, 0.1); /* Nền đen mờ */
+}
+/* Nút đăng nhập & đăng ký */
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Đăng nhập */
+.user-actions .login {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Khi cuộn xuống, đổi màu chữ */
+.header.scrolled .user-actions .login {
+    color: black;
+    border: 2px solid #57a3fa;
+}
+
+.user-actions .login:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Nền trắng mờ */
+}
+.header.scrolled .user-actions .login:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Nền đen mờ */
+}
+/* Đăng ký */
+.user-actions .register {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #57a3fa;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease-in-out;
+}
+
+.user-actions .register:hover {
+    background: #007af5;
+}
+
+/* Menu nằm dưới header */
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 200px;
+    
+}
+.nav-links {
+    width: 78.5vw; /* Chiếm toàn bộ chiều rộng màn hình */
+    
+}
+.nav-links ul {
+    display:flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.3); /* Đường trắng nhẹ trên */
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.3); /* Đường trắng nhẹ dưới */
+}
+
+.nav-links ul li {
+    line-height: 1.2; /* Giảm chiều cao của từng mục */
+    padding: 15px 5px; /* Điều chỉnh padding nếu cần */
+}
+
+.nav-links li {
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 12px 10px;
+    margin: 0 5px;
+    color: white;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+
+
+.nav-links li:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Nền trắng mờ */
+    transform: scale(1.05);
+}
+.header.scrolled .nav-links li:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Nền đen mờ */
+}
+
+.nav-links li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s ease-in-out;
+  }
+.header.scrolled .nav-links li  a{
+    color: black;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px; 
+    border: 1px solid #ddd; 
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.user-points {
+    color: gold;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 2px solid gold; 
+    padding: 4px 8px;
+    border-radius: 8px;
+    background-color: rgba(255, 215, 0, 0.2); 
+}
+  
+  
+  .header.scrolled .user-name {
+    color: black;
+  }
+  
